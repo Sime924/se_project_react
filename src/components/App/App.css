@@ -7,3 +7,19 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+
+.modal__legend {
+  font-family: "Cabinet Grotesk Regular", "Times New Roman", Times, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  margin: 0 0 12px;
+}
+
+.modal__label_type_radio {
+  margin-bottom: 8px;
+}
+
+.modal__radio-input {
+  margin-right: 8px;
+}

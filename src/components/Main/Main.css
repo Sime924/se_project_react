@@ -7,3 +7,10 @@
   gap: 21px;
   justify-content: center;
 }
+
+.cards__text {
+  font-family: "Cabinet Grotesk Regular", "Times New Roman", Times, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
