@@ -20,7 +20,8 @@
   font-weight: 700;
   line-height: 20px;
   border-radius: 4px;
-  font-family: "Cabinet Grotesk Thin", "Times New Roman", Times, sans-serif;
+  font-family: "Cabinet Grotesk Bold", "Times New Roman", Times, sans-serif;
+  color: rgb(0, 0, 0, 0.6);
 }
 
 .card__image {

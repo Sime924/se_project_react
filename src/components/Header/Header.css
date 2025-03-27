@@ -13,7 +13,7 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
-  font-family: "Cabinet Grotesk Thin", "Times New Roman", Times, sans-serif;
+  font-family: "Cabinet Grotesk Bold", "Times New Roman", Times, sans-serif;
 }
 
 .header__add-clothes-btn {
@@ -21,7 +21,7 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
-  font-family: "Cabinet Grotesk Thin", "Times New Roman", Times, sans-serif;
+  font-family: "Cabinet Grotesk Bold", "Times New Roman", Times, sans-serif;
   border: none;
   background: transparent;
   opacity: 1;
@@ -43,5 +43,5 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 100%;
-  font-family: "Cabinet Grotesk Thin", "Times New Roman", Times, sans-serif;
+  font-family: "Cabinet Grotesk Bold", "Times New Roman", Times, sans-serif;
 }
