@@ -18,6 +18,7 @@
 
 .modal__label_type_radio {
   margin-bottom: 8px;
+  width: 60px;
 }
 
 .modal__radio-input {
