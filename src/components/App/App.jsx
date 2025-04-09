@@ -5,6 +5,7 @@ import "./App.css";
 import { coordinates, APIkey } from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
+import SideBar from "../SideBar/SideBar";
 import ItemModal from "../ItemModal/ItemModal";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import Profile from "../Profile/Profile";
@@ -81,8 +82,6 @@ function App() {
       <div className="page">
         <div className="page__content">
           <Header handleAddClick={handleAddClick} weatherData={weatherData} />
-          <ToggleSwitch />
-
           <Routes>
             <Route
               path="/"
@@ -99,6 +98,7 @@ function App() {
               element={<Profile handleCardClick={handleCardClick} />}
             />
           </Routes>
+
           <Footer />
         </div>
         <AddItemModal
