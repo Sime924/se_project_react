@@ -10,6 +10,8 @@
 
 .toggle-switch__checkbox {
   opacity: 0;
+  width: 56px;
+  height: 28px;
 }
 
 .toggle-switch__circle {

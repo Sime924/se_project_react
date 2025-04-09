@@ -80,11 +80,8 @@ function App() {
     >
       <div className="page">
         <div className="page__content">
-          <Header
-            handleAddClick={handleAddClick}
-            weatherData={weatherData}
-            ToggleSwitch={ToggleSwitch}
-          />
+          <Header handleAddClick={handleAddClick} weatherData={weatherData} />
+          <ToggleSwitch />
 
           <Routes>
             <Route

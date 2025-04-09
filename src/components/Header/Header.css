@@ -33,7 +33,7 @@
 }
 
 .header__user-container {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   gap: 12px;
 }
