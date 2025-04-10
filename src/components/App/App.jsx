@@ -7,7 +7,6 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import SideBar from "../SideBar/SideBar";
 import ItemModal from "../ItemModal/ItemModal";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import Profile from "../Profile/Profile";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import Footer from "../Footer/Footer";
