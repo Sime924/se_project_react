@@ -69,7 +69,7 @@ function App() {
     getItems()
       .then((data) => {
         console.log(data);
-        // set the clothing items
+        setClothingItems(data);
       })
       .catch(console.error);
   }, []);
