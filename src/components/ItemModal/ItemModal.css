@@ -4,7 +4,7 @@
 }
 
 .modal__content {
-  padding: 0 0 28px;
+  padding: 0;
 }
 
 .modal__content_type_image {
@@ -18,6 +18,8 @@
   line-height: 24px;
   font-family: "Cabinet Grotesk Regular", "Times New Roman", Times, sans-serif;
   margin-left: 32px;
+  width: 36px;
+  height: 24px;
 }
 
 .modal__weather {
@@ -29,6 +31,8 @@
   margin-left: 32px;
   margin-bottom: 12px;
   padding-bottom: 32px;
+  width: 155px;
+  height: 24px;
 }
 
 .modal__close_item-modal {
@@ -44,6 +48,8 @@
   font-family: "Cabinet Grotesk Bold", "Times New Roman", Times, sans-serif;
   color: #ff4d00;
   transition: 0.4s;
+  margin-left: 365px;
+  width: 130px;
 }
 
 .modal__delete-item_btn:hover {
