@@ -1,28 +1,25 @@
 import "./ClothesSection.css";
 import { defaultClothingItems } from "../../utils/constants";
+import ItemCard from "../ItemCard/ItemCard";
 
-function ClothesSection() {
+function ClothesSection({ clothingItems, handleCardClick }) {
   return (
     <div className="clothes-section">
-      <div>
-        <p>Your items</p>
-        <button>+ Add New</button>
+      <div className="clothes-section__content">
+        <p className="clothes-section__text">Your items</p>
+        <button className="clothes-section__add-btn">+ Add New</button>
       </div>
       <ul className="cards__list">
-        {clothingItems
-          .filter((item) => {
-            return item.weather === weatherData.type;
-          })
-          .map((item) => {
-            return (
-              <ItemCard
-                key={item._id}
-                item={item}
-                // todo - pass as prop
-                handleCardClick={handleCardClick}
-              />
-            );
-          })}
+        {clothingItems.map((item) => {
+          return (
+            <ItemCard
+              key={item._id}
+              item={item}
+              // todo - pass as prop
+              handleCardClick={handleCardClick}
+            />
+          );
+        })}
       </ul>
     </div>
   );
