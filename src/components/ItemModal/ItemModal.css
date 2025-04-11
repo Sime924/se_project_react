@@ -3,6 +3,10 @@
   height: 498px;
 }
 
+.modal__content {
+  padding: 0 0 28px;
+}
+
 .modal__content_type_image {
   padding: 0;
   overflow: hidden;
@@ -29,4 +33,20 @@
 
 .modal__close_item-modal {
   color: transparent;
+}
+
+.modal__delete-item_btn {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 700px;
+  line-height: 24px;
+  font-family: "Cabinet Grotesk Bold", "Times New Roman", Times, sans-serif;
+  color: #ff4d00;
+  transition: 0.4s;
+}
+
+.modal__delete-item_btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
