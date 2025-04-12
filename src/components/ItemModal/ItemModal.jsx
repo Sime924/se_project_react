@@ -1,3 +1,4 @@
+import { defaultClothingItems } from "../../utils/constants";
 import "./ItemModal.css";
 
 function ItemModal({ activeModal, onCLose, card }) {

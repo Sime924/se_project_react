@@ -6,4 +6,11 @@ function getItems() {
   });
 }
 
+function addItems(id) {
+  return fetch(`${baseUrl}/items/${id}`, {
+    method: "POST",
+    headers: this._headers,
+  }).then(this._checkResponse);
+}
+
 export { getItems };

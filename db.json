@@ -101,6 +101,102 @@
       "name": "T-Shirt",
       "weather": "hot",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 17
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 18
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 19
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 20
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 21
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 22
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 23
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 24
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 25
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 26
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 27
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 28
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 29
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 30
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 31
+    },
+    {
+      "name": "Jacket",
+      "imageUrl": "http://example.com/jacket.png",
+      "weather": "cold",
+      "_id": 32
     }
   ]
 }
