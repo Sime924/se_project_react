@@ -4,7 +4,7 @@ import "./profile.css";
 
 function profile({ handleCardClick, clothingItems }) {
   return (
-    <div>
+    <div className="profile">
       <section className="profile__sidebar"></section>
       <SideBar />
       <section className="profile__clothing-items">
