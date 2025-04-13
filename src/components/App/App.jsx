@@ -27,7 +27,7 @@ function App() {
 
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   const [activeModal, setActiveModal] = useState("");
-  const [selectedCard, setSelectedCard] = useState({});
+  const [selectedCard, setSelectedCard] = useState(null);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
   const handleToggleSwitchChange = () => {
@@ -45,6 +45,23 @@ function App() {
 
   const closeActiveModal = () => {
     setActiveModal("");
+  };
+
+  const handleDeleteCard = () => {
+    if (!selectedCard || !selectedCard._id) {
+      console.error("no card selected for deleting");
+      return;
+    }
+
+    deleteCard(selectedCard._id)
+      .then(() => {
+        console.log("Deleting Item with _id:", selectedCard._id);
+        setClothingItems((prevItems) =>
+          prevItems.filter((item) => item._id !== selectedCard._id)
+        );
+        setActiveModal("");
+      })
+      .catch(console.error);
   };
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
@@ -114,6 +131,7 @@ function App() {
           activeModal={activeModal}
           card={selectedCard}
           onCLose={closeActiveModal}
+          onDeleteClick={handleDeleteCard}
         />
       </div>
     </CurrentTemperatureUnitContext.Provider>

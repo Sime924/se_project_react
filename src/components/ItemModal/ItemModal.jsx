@@ -1,7 +1,7 @@
 import { defaultClothingItems } from "../../utils/constants";
 import "./ItemModal.css";
 
-function ItemModal({ activeModal, onCLose, card }) {
+function ItemModal({ activeModal, onCLose, card, handleDeleteCard }) {
   return (
     <div className={`modal ${activeModal === "preview" && "modal_opened"}`}>
       <div className="modal__content modal__content_type_image">
@@ -20,6 +20,7 @@ function ItemModal({ activeModal, onCLose, card }) {
             className="modal-close modal__delete-item_btn"
             type="button"
             onClick={onCLose}
+            onDeleteClick={handleDeleteCard}
           >
             Delete Item
           </button>
