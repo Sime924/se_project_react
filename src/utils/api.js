@@ -6,11 +6,25 @@ function getItems() {
   });
 }
 
-function addItems(id) {
-  return fetch(`${baseUrl}/items/${id}`, {
-    method: "POST",
-    headers: this._headers,
-  }).then(this._checkResponse);
+function checkResponse(res) {
+  return res.ok ? res.json() : Promise.reject("Error");
 }
 
-export { getItems };
+function addItem(itemData) {
+  return fetch("http://localhost:3001/items", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(itemData),
+  }).then(checkResponse);
+}
+
+function deleteCard(id) {
+  return fetch(`${baseUrl}/items/${id}`, {
+    method: "DELETE",
+    headers: headers,
+  }).then(checkResponse);
+}
+
+export { getItems, deleteCard, addItem };
