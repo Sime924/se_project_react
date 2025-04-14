@@ -43,12 +43,6 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Jacket.png?etag=f4bb188deaa25ac84ce2338be2d404ad"
     },
     {
-      "_id": 7,
-      "name": "Jeans",
-      "weather": "warm",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Jeans.png?etag=58345e8bef1ce5f95ac882e71d309e6c"
-    },
-    {
       "_id": 8,
       "name": "Loafers",
       "weather": "warm",
@@ -197,6 +191,90 @@
       "imageUrl": "http://example.com/jacket.png",
       "weather": "cold",
       "_id": 32
+    },
+    {
+      "_id": 33
+    },
+    {
+      "_id": 34
+    },
+    {
+      "_id": 35
+    },
+    {
+      "_id": 36
+    },
+    {
+      "_id": 37
+    },
+    {
+      "_id": 38
+    },
+    {
+      "name": "aasdac",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Beanie.png?etag=bc10497cc80fa557f036e94f9999f7b2",
+      "weather": "warm",
+      "_id": 39
+    },
+    {
+      "_id": 40
+    },
+    {
+      "_id": 41
+    },
+    {
+      "_id": 42
+    },
+    {
+      "_id": 43
+    },
+    {
+      "_id": 44
+    },
+    {
+      "_id": 45
+    },
+    {
+      "_id": 46
+    },
+    {
+      "_id": 47
+    },
+    {
+      "_id": 48
+    },
+    {
+      "_id": 49
+    },
+    {
+      "_id": 50
+    },
+    {
+      "_id": 51
+    },
+    {
+      "_id": 52
+    },
+    {
+      "_id": 53
+    },
+    {
+      "_id": 54
+    },
+    {
+      "_id": 55
+    },
+    {
+      "_id": 56
+    },
+    {
+      "_id": 57
+    },
+    {
+      "_id": 58
+    },
+    {
+      "_id": 59
     }
   ]
 }

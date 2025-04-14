@@ -30,12 +30,12 @@
   font-family: "Cabinet Grotesk Bold", "Times New Roman", Times, sans-serif;
   border: none;
   background: transparent;
-  opacity: 1;
+  transition: 0.4s;
 }
 
 .header__add-clothes-btn:hover {
   cursor: pointer;
-  transition: 0.4s;
+  opacity: 0.7;
 }
 
 .header__user-container {

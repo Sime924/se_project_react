@@ -25,7 +25,7 @@ function App() {
     isDay: false,
   });
 
-  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+  const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState(null);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -67,11 +67,14 @@ function App() {
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     const newId = Math.max(...clothingItems.map((item) => item._id)) + 1;
 
-    setClothingItems((prevItems) => [
-      { name, link: imageUrl, weather },
-      ...prevItems,
-    ]);
-    closeActiveModal();
+    addItem({ name, imageUrl, weather })
+      .then((newItem) => {
+        setClothingItems((prevItems) => [newItem, ...prevItems]);
+        closeActiveModal();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   useEffect(() => {
@@ -114,6 +117,7 @@ function App() {
               path="/profile"
               element={
                 <Profile
+                  handleAddClick={handleAddClick}
                   handleCardClick={handleCardClick}
                   clothingItems={clothingItems}
                 />
@@ -131,7 +135,7 @@ function App() {
           activeModal={activeModal}
           card={selectedCard}
           onCLose={closeActiveModal}
-          onDeleteClick={handleDeleteCard}
+          handleDeleteCard={handleDeleteCard}
         />
       </div>
     </CurrentTemperatureUnitContext.Provider>

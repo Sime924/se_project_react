@@ -23,7 +23,6 @@ function addItem(itemData) {
 function deleteCard(id) {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
-    headers: headers,
   }).then(checkResponse);
 }
 
