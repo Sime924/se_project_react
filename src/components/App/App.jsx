@@ -59,7 +59,7 @@ function App() {
         setClothingItems((prevItems) =>
           prevItems.filter((item) => item._id !== selectedCard._id)
         );
-        setActiveModal("");
+        closeActiveModal();
       })
       .catch(console.error);
   };
