@@ -9,7 +9,7 @@ export function checkResponse(res) {
 }
 
 function addItem(itemData) {
-  return fetch("http://localhost:3001/items", {
+  return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
