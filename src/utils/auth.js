@@ -1,9 +1,3 @@
-import {
-  BAD_REQUEST_STATUS_CODE,
-  METHOD_NOT_ALLOWED,
-  REQUEST_COMPLETED_SUCCESSFULLY,
-} from "../../../se_project_express/utils/errors";
-
 const baseUrl = "http://localhost:3001";
 
 function signup(userData) {
@@ -24,14 +18,13 @@ function signup(userData) {
       return data;
     })
     .catch((error) => {
-      return res
-        .status(METHOD_NOT_ALLOWED)
-        .send({ message: "There was a problem with the signup" });
+      console.error("Signin error:", error);
+      throw new Error("There was a problem with the signin");
     });
 }
 
 function signin(email, password) {
-  return fetch(`S{baseUrl}/signin`, {
+  return fetch(`${baseUrl}/signin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -49,9 +42,8 @@ function signin(email, password) {
       return data;
     })
     .catch((error) => {
-      return res
-        .status(BAD_REQUEST_STATUS_CODE)
-        .send({ message: "There was a problem with the signin" });
+      console.error("Signin error:", error);
+      throw new Error("There was a problem with the signin.");
     });
 }
 

@@ -15,6 +15,13 @@ import { defaultClothingItems } from "../../utils/constants";
 import { getItems } from "../../utils/api";
 import { addItem } from "../../utils/api";
 import { deleteCard } from "../../utils/api";
+import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
+import { signup } from "../../utils/auth";
+import { signin } from "../../utils/auth";
+import LoginModal from "../LoginModal/LoginModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
+
+const BAD_REQUEST_STATUS_CODE = 400;
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -29,6 +36,33 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState(null);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+
+  const handleRegistration = ({ name, avatar, email, password }) => {
+    signup({ name, avatar, email, password })
+      .then((res) => {
+        closeActiveModal();
+        setCurrentUser(res);
+        setIsLoggedIn(true);
+      })
+      .catch((err) => {
+        res.status(BAD_REQUEST_STATUS_CODE).send({ message: "User not found" });
+      });
+  };
+
+  const handleSignIn = ({ email, password }) => {
+    signin({ email, password })
+      .then((res) => {
+        closeActiveModal();
+        localStorage.setItem("token", res.token);
+        setCurrentUser(res);
+        setIsLoggedIn(true);
+      })
+      .catch((err) => {
+        res.status(BAD_REQUEST_STATUS_CODE).send({ message: "Signin failed" });
+      });
+  };
 
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
@@ -95,6 +129,14 @@ function App() {
       .catch(console.error);
   }, []);
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      checkTokenValidity(token);
+    }
+  }, []);
+
   return (
     <CurrentTemperatureUnitContext.Provider
       value={{ currentTemperatureUnit, handleToggleSwitchChange }}
@@ -116,11 +158,13 @@ function App() {
             <Route
               path="/profile"
               element={
-                <Profile
-                  handleAddClick={handleAddClick}
-                  handleCardClick={handleCardClick}
-                  clothingItems={clothingItems}
-                />
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                  <Profile
+                    handleAddClick={handleAddClick}
+                    handleCardClick={handleCardClick}
+                    clothingItems={clothingItems}
+                  />
+                </ProtectedRoute>
               }
             />
           </Routes>
@@ -134,8 +178,18 @@ function App() {
         <ItemModal
           activeModal={activeModal}
           card={selectedCard}
-          onCLose={closeActiveModal}
+          onClose={closeActiveModal}
           handleDeleteCard={handleDeleteCard}
+        />
+        <LoginModal
+          isOpen={activeModal === "login"}
+          onClose={closeActiveModal}
+          onSignIn={handleSignIn}
+        />
+        <RegisterModal
+          isopen={activeModal === "register"}
+          onClose={closeActiveModal}
+          onSignUp={handleRegistration}
         />
       </div>
     </CurrentTemperatureUnitContext.Provider>
