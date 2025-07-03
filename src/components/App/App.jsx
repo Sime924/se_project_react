@@ -18,6 +18,7 @@ import { deleteCard } from "../../utils/api";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 import { signup } from "../../utils/auth";
 import { signin } from "../../utils/auth";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 
