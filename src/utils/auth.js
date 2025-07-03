@@ -47,4 +47,19 @@ function signin(email, password) {
     });
 }
 
-export { signup, signin };
+const checkTokenValidity = (token) => {
+  return fetch(`${baseUrl}/user/me`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Error: ${res.status}`);
+  });
+};
+
+export { signup, signin, checkTokenValidity };
