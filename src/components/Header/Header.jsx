@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-const { currentUser, isLoggedIn } = useContext(CurrentUserContext);
-
 function Header({
   handleAddClick,
   weatherData,
   handleOpenRegisterModal,
   handleShowLoginModal,
 }) {
+  const { currentUser, isLoggedIn } = useContext(CurrentUserContext);
+
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",

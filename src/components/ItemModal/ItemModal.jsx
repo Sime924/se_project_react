@@ -1,5 +1,14 @@
+import { useContext } from "react";
 import { defaultClothingItems } from "../../utils/constants";
 import "./ItemModal.css";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+
+const currentUser = useContext(CurrentUserContext);
+const isOwn = card.owner === currentUser._id;
+
+const itemDeleteButtonClassName = `modal__delete-item_btn ${
+  isOwn ? "" : "modal__delete-item_btn_hidden"
+}`;
 
 function ItemModal({ activeModal, onCLose, card, handleDeleteCard }) {
   return (
