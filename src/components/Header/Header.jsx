@@ -1,10 +1,19 @@
 import "./Header.css";
 import avatar from "../../assets/avatar.svg";
+import { useContext } from "react";
 import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function Header({ handleAddClick, weatherData }) {
+const { currentUser, isLoggedIn } = useContext(CurrentUserContext);
+
+function Header({
+  handleAddClick,
+  weatherData,
+  handleOpenRegisterModal,
+  handleShowLoginModal,
+}) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -20,19 +29,33 @@ function Header({ handleAddClick, weatherData }) {
           {currentDate}, {weatherData.city}
         </p>
         <ToggleSwitch />
-        <button
-          onClick={handleAddClick}
-          type="button"
-          className="header__add-clothes-btn"
-        >
-          + Add clothes
-        </button>
-        <Link to="/profile" className="header__link">
-          <div className="header__user-container">
-            <p className="header__username">Simon Gebord</p>
-            <img src={avatar} alt="Simon Gebord" className="header__avatar" />
+        {isLoggedIn ? (
+          <Link to="/profile" className="header__link">
+            <div className="header__user-container">
+              <p className="header__username">{currentUser?.name}</p>
+              <img
+                src={currentUser?.avatar}
+                alt={currentUser?.name}
+                className="header__avatar"
+              />
+            </div>
+          </Link>
+        ) : (
+          <div className="header__auth-container">
+            <button
+              className="header__register-btn"
+              onClick={handleOpenRegisterModal}
+            >
+              Sign Up
+            </button>
+            <button
+              className="header__login-btn"
+              onClick={handleShowLoginModal}
+            >
+              log In
+            </button>
           </div>
-        </Link>
+        )}
       </div>
     </header>
   );

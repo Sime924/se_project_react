@@ -18,7 +18,7 @@ import { deleteCard } from "../../utils/api";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 import { signup } from "../../utils/auth";
 import { signin } from "../../utils/auth";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 
@@ -38,7 +38,17 @@ function App() {
   const [selectedCard, setSelectedCard] = useState(null);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+
+  const handleOpenRegisterModal = () => {
+    setShowRegisterModal(true);
+  };
+
+  const handleOpenLoginModal = () => {
+    setShowLoginModal(true);
+  };
 
   const handleRegistration = ({ name, avatar, email, password }) => {
     signup({ name, avatar, email, password })
@@ -145,7 +155,12 @@ function App() {
       >
         <div className="page">
           <div className="page__content">
-            <Header handleAddClick={handleAddClick} weatherData={weatherData} />
+            <Header
+              handleAddClick={handleAddClick}
+              weatherData={weatherData}
+              handleOpenRegisterModal={handleOpenRegisterModal}
+              handleOpenLoginModal={handleOpenLoginModal}
+            />
             <Routes>
               <Route
                 path="/"
@@ -183,16 +198,20 @@ function App() {
             onClose={closeActiveModal}
             handleDeleteCard={handleDeleteCard}
           />
-          <LoginModal
-            isOpen={activeModal === "login"}
-            onClose={closeActiveModal}
-            onSignIn={handleSignIn}
-          />
-          <RegisterModal
-            isopen={activeModal === "register"}
-            onClose={closeActiveModal}
-            onSignUp={handleRegistration}
-          />
+          {showLoginModal && (
+            <LoginModal
+              isOpen={activeModal === "login"}
+              onClose={closeActiveModal}
+              onSignIn={handleSignIn}
+            />
+          )}
+          {showRegisterModal && (
+            <RegisterModal
+              isopen={activeModal === "register"}
+              onClose={closeActiveModal}
+              onSignUp={handleRegistration}
+            />
+          )}
         </div>
       </CurrentTemperatureUnitContext.Provider>
     </CurrentUserContext.Provider>
