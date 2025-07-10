@@ -96,6 +96,12 @@ function App() {
       });
   };
 
+  const handleSignOut = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    setCurrentUser({});
+  };
+
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
   };
@@ -202,6 +208,7 @@ function App() {
                       handleAddClick={handleAddClick}
                       handleCardClick={handleCardClick}
                       clothingItems={clothingItems}
+                      handleSignOut={handleSignOut}
                     />
                   </ProtectedRoute>
                 }
