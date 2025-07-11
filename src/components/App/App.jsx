@@ -35,7 +35,7 @@ function App() {
 
   const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
-  const [selectedCard, setSelectedCard] = useState(null);
+  const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
@@ -44,6 +44,7 @@ function App() {
 
   const handleOpenRegisterModal = () => {
     setShowRegisterModal(true);
+    console.log("register modal clicked");
   };
 
   const handleOpenLoginModal = () => {
@@ -117,6 +118,8 @@ function App() {
 
   const closeActiveModal = () => {
     setActiveModal("");
+    setShowLoginModal(false);
+    setShowRegisterModal(false);
   };
 
   const handleDeleteCard = () => {
@@ -160,9 +163,9 @@ function App() {
 
   useEffect(() => {
     getItems()
-      .then(({ data }) => {
+      .then((data) => {
         console.log(data);
-        setClothingItems(data.reverse);
+        setClothingItems(data.reverse());
       })
       .catch(console.error);
   }, []);
@@ -186,7 +189,7 @@ function App() {
               handleAddClick={handleAddClick}
               weatherData={weatherData}
               handleOpenRegisterModal={handleOpenRegisterModal}
-              handleOpenLoginModal={handleOpenLoginModal}
+              handleShowLoginModal={handleOpenLoginModal}
             />
             <Routes>
               <Route
@@ -229,14 +232,14 @@ function App() {
           />
           {showLoginModal && (
             <LoginModal
-              isOpen={activeModal === "login"}
+              isOpen={showLoginModal}
               onClose={closeActiveModal}
               onSignIn={handleSignIn}
             />
           )}
           {showRegisterModal && (
             <RegisterModal
-              isopen={activeModal === "register"}
+              isOpen={showRegisterModal}
               onClose={closeActiveModal}
               onSignUp={handleRegistration}
             />
