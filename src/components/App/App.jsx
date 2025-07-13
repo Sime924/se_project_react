@@ -242,6 +242,7 @@ function App() {
               isOpen={showRegisterModal}
               onClose={closeActiveModal}
               onSignUp={handleRegistration}
+              handleSubmit={handleRegistration}
             />
           )}
         </div>
