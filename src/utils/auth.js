@@ -4,47 +4,32 @@ function signup(userData) {
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
+      Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: json.stringify(userData),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      return data;
-    })
-    .catch((error) => {
-      console.error("Signin error:", error);
-      throw new Error("There was a problem with the signin");
-    });
+    body: JSON.stringify(userData),
+  }).then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  });
 }
 
 function signin(email, password) {
   return fetch(`${baseUrl}/signin`, {
     method: "POST",
     headers: {
+      Accept: "application/json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response is not ok");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      localStorage.setItem("token", data.token);
-      return data;
-    })
-    .catch((error) => {
-      console.error("Signin error:", error);
-      throw new Error("There was a problem with the signin.");
-    });
+  }).then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response is not ok");
+    }
+    return response.json();
+  });
 }
 
 const checkTokenValidity = (token) => {

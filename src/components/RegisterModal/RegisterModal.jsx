@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { signin, signup } from "../../utils/auth";
-import handleRegistration from "../App/App";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 function RegisterModal({ isOpen, onClose, handleRegistration }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [avatarUrl, setAvatarUrl] = useState("");
+  const [avatar, setAvatar] = useState("");
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -22,7 +21,11 @@ function RegisterModal({ isOpen, onClose, handleRegistration }) {
   };
 
   const handleAvatarUrlChange = (e) => {
-    setAvatarUrl(e.target.value);
+    setAvatar(e.target.value);
+  };
+  const handleRegistrationSubmit = (e) => {
+    e.preventDefault();
+    handleRegistration({ name, email, avatar, password });
   };
 
   return (
@@ -31,7 +34,7 @@ function RegisterModal({ isOpen, onClose, handleRegistration }) {
       buttonText="Sign up"
       isOpen={isOpen}
       onClose={onClose}
-      onSubmit={handleRegistration}
+      onSubmit={handleRegistrationSubmit}
     >
       <label htmlFor="email" className="modal__label">
         Email{" "}
@@ -82,7 +85,7 @@ function RegisterModal({ isOpen, onClose, handleRegistration }) {
           placeholder="Enter avatar Url"
           className="modal__input"
           onChange={handleAvatarUrlChange}
-          value={avatarUrl}
+          value={avatar}
         />
       </label>
     </ModalWithForm>
