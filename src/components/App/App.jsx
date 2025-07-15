@@ -235,6 +235,7 @@ function App() {
               isOpen={showLoginModal}
               onClose={closeActiveModal}
               onSignIn={handleSignIn}
+              handleSignIn={handleSignIn}
             />
           )}
           {showRegisterModal && (
