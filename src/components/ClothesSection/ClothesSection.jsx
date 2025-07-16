@@ -6,7 +6,11 @@ import ItemCard from "../ItemCard/ItemCard";
 
 function ClothesSection({ clothingItems, handleCardClick, handleAddClick }) {
   const { CurrentUser } = useContext(CurrentUserContext);
+  console.log("Current User", CurrentUser);
 
+  if (!CurrentUser || !CurrentUser._id) {
+    return [];
+  }
   const userItems = clothingItems.filter(
     (item) => item.owner === CurrentUser._id
   );

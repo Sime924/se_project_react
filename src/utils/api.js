@@ -9,18 +9,22 @@ export function checkResponse(res) {
 }
 
 function addItem(itemData) {
+  const token = localStorage.getItem("token");
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(itemData),
   }).then(checkResponse);
 }
 
 function deleteCard(id) {
+  const token = localStorage.getItem("token");
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
+    authorization: `Bearer ${token}`,
   }).then(checkResponse);
 }
 

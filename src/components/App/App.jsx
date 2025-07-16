@@ -16,7 +16,7 @@ import { getItems } from "../../utils/api";
 import { addItem } from "../../utils/api";
 import { deleteCard } from "../../utils/api";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
-import { signup } from "../../utils/auth";
+import { checkTokenValidity, signup } from "../../utils/auth";
 import { signin } from "../../utils/auth";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import LoginModal from "../LoginModal/LoginModal";
@@ -88,9 +88,13 @@ function App() {
     signin({ email, password })
       .then((res) => {
         closeActiveModal();
-        localStorage.setItem("token", res.token);
-        setCurrentUser(res);
-        setIsLoggedIn(true);
+        if (res.token) {
+          localStorage.setItem("token", res.token);
+          checkTokenValidity(res.token).then((userData) => {
+            setCurrentUser(userData);
+            setIsLoggedIn(true);
+          });
+        }
       })
       .catch((err) => {
         res.status(BAD_REQUEST_STATUS_CODE).send({ message: "Signin failed" });

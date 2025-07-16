@@ -16,7 +16,7 @@ function signup(userData) {
   });
 }
 
-function signin(email, password) {
+function signin({ email, password }) {
   return fetch(`${baseUrl}/signin`, {
     method: "POST",
     headers: {
@@ -33,7 +33,7 @@ function signin(email, password) {
 }
 
 const checkTokenValidity = (token) => {
-  return fetch(`${baseUrl}/user/me`, {
+  return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
