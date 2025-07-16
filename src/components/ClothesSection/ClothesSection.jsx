@@ -5,14 +5,14 @@ import { defaultClothingItems } from "../../utils/constants";
 import ItemCard from "../ItemCard/ItemCard";
 
 function ClothesSection({ clothingItems, handleCardClick, handleAddClick }) {
-  const { CurrentUser } = useContext(CurrentUserContext);
-  console.log("Current User", CurrentUser);
+  const { currentUser } = useContext(CurrentUserContext);
+  console.log("Current User", currentUser);
 
-  if (!CurrentUser || !CurrentUser._id) {
+  if (!currentUser || !currentUser._id) {
     return [];
   }
   const userItems = clothingItems.filter(
-    (item) => item.owner === CurrentUser._id
+    (item) => item.owner === currentUser._id
   );
 
   return (

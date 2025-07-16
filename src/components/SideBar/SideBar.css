@@ -16,3 +16,12 @@
   width: 157px;
   height: 25px;
 }
+
+.sidebar_logout-btn {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 100%;
+  font-family: "Cabinet Grotesk Bold", "Times New Roman", Times, sans-serif;
+}
