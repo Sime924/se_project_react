@@ -4,7 +4,12 @@ import "./ClothesSection.css";
 import { defaultClothingItems } from "../../utils/constants";
 import ItemCard from "../ItemCard/ItemCard";
 
-function ClothesSection({ clothingItems, handleCardClick, handleAddClick }) {
+function ClothesSection({
+  clothingItems,
+  handleCardClick,
+  handleAddClick,
+  handleCardLike,
+}) {
   const { currentUser } = useContext(CurrentUserContext);
   console.log("Current User", currentUser);
 
@@ -33,7 +38,7 @@ function ClothesSection({ clothingItems, handleCardClick, handleAddClick }) {
             <ItemCard
               key={item._id}
               item={item}
-              // todo - pass as prop
+              onCardLike={handleCardLike}
               handleCardClick={handleCardClick}
             />
           );

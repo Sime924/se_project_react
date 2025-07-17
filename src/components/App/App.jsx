@@ -216,6 +216,7 @@ function App() {
                       handleCardClick={handleCardClick}
                       clothingItems={clothingItems}
                       handleSignOut={handleSignOut}
+                      handleCardLike={handleCardLike}
                     />
                   </ProtectedRoute>
                 }

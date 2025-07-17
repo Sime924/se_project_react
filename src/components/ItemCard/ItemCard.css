@@ -28,3 +28,24 @@
   width: 100%;
   border-radius: 19px;
 }
+
+.card__like-btn {
+  border: none;
+  background: transparent;
+  opacity: 0.4;
+  transition-duration: 0.3s;
+}
+
+.card__like-btn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card__like-btn_liked {
+  background-image: url("../../assets/LikeButtonLiked.png");
+  opacity: 1;
+}
+
+.card__like-btn_liked:hover {
+  background-repeat: no-repeat;
+}
