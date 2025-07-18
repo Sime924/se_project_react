@@ -40,4 +40,14 @@ function addCardLike(id) {
   }).then(checkResponse);
 }
 
-export { getItems, deleteCard, addItem, addCardLike };
+function removeCardLike(id) {
+  const token = localStorage.getItem("token");
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "DELETE",
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+}
+
+export { getItems, deleteCard, addItem, addCardLike, removeCardLike };
