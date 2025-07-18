@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-
+import * as api from "../../utils/api";
 import "./App.css";
 import { coordinates, APIkey } from "../../utils/constants";
 import Header from "../Header/Header";
@@ -26,7 +26,7 @@ const BAD_REQUEST_STATUS_CODE = 400;
 
 function App() {
   const [weatherData, setWeatherData] = useState({
-    type: "",
+    type: "hot",
     temp: { F: 999, C: 999 },
     city: "",
     condition: "clouds",
@@ -50,7 +50,7 @@ function App() {
   const handleOpenLoginModal = () => {
     setShowLoginModal(true);
   };
-
+  console.log(clothingItems);
   const handleCardLike = ({ id, isLiked }) => {
     const token = localStorage.getItem("jwt");
     !isLiked
@@ -202,7 +202,7 @@ function App() {
                   <Main
                     weatherData={weatherData}
                     handleCardClick={handleCardClick}
-                    onCardLike={handleCardLike}
+                    handleCardLike={handleCardLike}
                     clothingItems={clothingItems}
                   />
                 }

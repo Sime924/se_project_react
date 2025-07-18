@@ -24,8 +24,20 @@ function deleteCard(id) {
   const token = localStorage.getItem("token");
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
-    authorization: `Bearer ${token}`,
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
   }).then(checkResponse);
 }
 
-export { getItems, deleteCard, addItem };
+function addCardLike(id) {
+  const token = localStorage.getItem("token");
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "PUT",
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+}
+
+export { getItems, deleteCard, addItem, addCardLike };

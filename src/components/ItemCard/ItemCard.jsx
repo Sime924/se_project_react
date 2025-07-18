@@ -4,14 +4,14 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 import likeButton from "../../assets/Like_button.png";
 
 function ItemCard({ item, handleCardClick, onCardLike }) {
-  const currentUser = useContext(CurrentUserContext);
+  const { currentUser } = useContext(CurrentUserContext);
 
   const handleClick = () => {
     handleCardClick(item);
   };
 
   const isLiked = item.likes.some((id) => id === currentUser._id);
-
+  console.log(item.likes, currentUser);
   const handleLike = () => {
     onCardLike({ id: item._id, isLiked });
   };
