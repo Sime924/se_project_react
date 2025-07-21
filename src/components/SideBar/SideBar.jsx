@@ -6,6 +6,7 @@ function SideBar({ handleSignOut }) {
     <div className="sidebar">
       <img className="sidebar__avatar" src={avatar} alt="Default avatar" />
       <p className="sidebar__username">Simon Gebord</p>
+      <button className="sidebar__profile_data-btn">Change profile data</button>
       <button className="sidebar_logout-btn" onClick={handleSignOut}>
         Log out
       </button>

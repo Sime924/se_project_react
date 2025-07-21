@@ -24,4 +24,23 @@
   font-weight: 700;
   line-height: 100%;
   font-family: "Cabinet Grotesk Bold", "Times New Roman", Times, sans-serif;
+  opacity: 1;
+  transition-duration: 0.4s;
+}
+
+.sidebar_logout-btn:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.sidebar__profile_data-btn {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 100%;
+  font-family: "Cabinet Grotesk Bold", "Times New Roman", Times, sans-serif;
+  opacity: 1;
+  transition-duration: 0.4s;
+  width: 171px;
 }

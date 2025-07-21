@@ -50,7 +50,6 @@ function App() {
   const handleOpenLoginModal = () => {
     setShowLoginModal(true);
   };
-  console.log(clothingItems);
   const handleCardLike = ({ id, isLiked }) => {
     const token = localStorage.getItem("jwt");
     !isLiked
