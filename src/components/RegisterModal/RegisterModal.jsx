@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { signin, signup } from "../../utils/auth";
-import "./RegisterModal/css";
+import "./RegisterModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 function RegisterModal({ isOpen, onClose, handleRegistration }) {
