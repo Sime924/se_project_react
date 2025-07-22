@@ -3,7 +3,7 @@ import { defaultClothingItems } from "../../utils/constants";
 import "./ItemModal.css";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function ItemModal({ activeModal, onCLose, card, handleDeleteCard }) {
+function ItemModal({ activeModal, onClose, card, handleDeleteCard }) {
   const currentUser = useContext(CurrentUserContext);
 
   const isOwn = card.owner === currentUser._id;
@@ -15,7 +15,7 @@ function ItemModal({ activeModal, onCLose, card, handleDeleteCard }) {
     <div className={`modal ${activeModal === "preview" && "modal_opened"}`}>
       <div className="modal__content modal__content_type_image">
         <button
-          onClick={onCLose}
+          onClick={onClose}
           type="button"
           className="modal__close modal__close_item-modal"
         ></button>

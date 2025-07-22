@@ -5,7 +5,6 @@
 .clothes-section__content {
   display: flex;
   gap: 15px;
-  margin-left: 60px;
 }
 
 .clothes-section__text {

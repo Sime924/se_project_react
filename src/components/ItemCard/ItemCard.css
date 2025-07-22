@@ -7,10 +7,16 @@
   border-color: rgb(0, 0, 0, 0.3);
   border-radius: 19px;
 }
-
-.card__name {
+.card__title-container {
+  display: flex;
   position: absolute;
   top: 15px;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.card__name {
   margin: 0;
   padding: 2px 12px 2px;
   background-color: #ffff;
@@ -33,6 +39,10 @@
   background: transparent;
   opacity: 0.4;
   transition-duration: 0.3s;
+  width: 18px;
+  height: 15px;
+  margin: 0;
+  padding: 0;
 }
 
 .card__like-btn:hover {

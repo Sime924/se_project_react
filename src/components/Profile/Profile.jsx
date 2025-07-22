@@ -11,7 +11,6 @@ function Profile({
 }) {
   return (
     <div className="profile">
-      <section className="profile__sidebar"></section>
       <SideBar handleSignOut={handleSignOut} />
       <section className="profile__clothing-items">
         <ClothesSection

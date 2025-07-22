@@ -1,5 +1,12 @@
 .sidebar {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar__user-container {
+  display: flex;
+  margin-bottom: 24px;
 }
 
 .sidebar__avatar {
@@ -13,7 +20,6 @@
   line-height: 100%;
   font-family: "Cabinet Grotesk Bold", "Times New Roman", Times, sans-serif;
   margin-left: 16px;
-  width: 157px;
   height: 25px;
 }
 
@@ -42,5 +48,5 @@
   font-family: "Cabinet Grotesk Bold", "Times New Roman", Times, sans-serif;
   opacity: 1;
   transition-duration: 0.4s;
-  width: 171px;
+  margin-bottom: 8px;
 }
