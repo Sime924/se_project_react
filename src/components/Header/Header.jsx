@@ -32,6 +32,7 @@ function Header({
         {isLoggedIn ? (
           <Link to="/profile" className="header__link">
             <div className="header__user-container">
+              <button className="header__add-clothes-btn">+ Add clothes</button>
               <p className="header__username">{currentUser?.name}</p>
               <img
                 src={currentUser?.avatar}

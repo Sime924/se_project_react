@@ -41,6 +41,11 @@ function App() {
   const [showRegisterModal, setShowRegisterModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+  const [showConfirmDeleteModal, setShowConfirmDeleteModal] = useState(false);
+
+  const handleOpenDeleteModal = () => {
+    setShowConfirmDeleteModal(true);
+  };
 
   const handleOpenRegisterModal = () => {
     setShowRegisterModal(true);
