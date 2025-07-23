@@ -13,6 +13,10 @@
 .header__logo {
   margin-right: 24px;
 }
+.header__avatar {
+  max-width: 40px;
+  max-height: 40px;
+}
 
 .header__date-and-location {
   margin: 0;

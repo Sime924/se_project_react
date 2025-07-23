@@ -19,12 +19,6 @@ export default function AddItemModal({
     setAvatar(e.target.value);
   };
 
-  useEffect(() => {
-    setName("");
-    setImageUrl("");
-    setWeather("");
-  }, [isOpen]); // watch the opening state
-
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddItemModalSubmit({ name, imageUrl, weather });
