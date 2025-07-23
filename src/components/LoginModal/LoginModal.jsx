@@ -28,7 +28,7 @@ function LoginModal({ isOpen, onClose, handleSignIn }) {
       onClose={onClose}
       onSubmit={handleLoginModalSubmit}
     >
-      <label htmlFor="email" className="modal__label">
+      <label className="modal__label">
         Email{" "}
         <input
           type="email"
@@ -43,7 +43,7 @@ function LoginModal({ isOpen, onClose, handleSignIn }) {
         />
       </label>
 
-      <label htmlFor="password" className="modal__label">
+      <label className="modal__label">
         Password{" "}
         <input
           type="password"
