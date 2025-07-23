@@ -83,9 +83,7 @@ function App() {
         setCurrentUser(res);
         setIsLoggedIn(true);
       })
-      .catch((err) => {
-        res.status(BAD_REQUEST_STATUS_CODE).send({ message: "User not found" });
-      });
+      .catch((err) => console.log(err));
   };
 
   const handleSignIn = ({ email, password }) => {
@@ -100,9 +98,7 @@ function App() {
           });
         }
       })
-      .catch((err) => {
-        res.status(BAD_REQUEST_STATUS_CODE).send({ message: "Signin failed" });
-      });
+      .catch((err) => console.log(err));
   };
 
   const handleSignOut = () => {
