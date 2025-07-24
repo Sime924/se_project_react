@@ -76,6 +76,11 @@ function App() {
           .catch((err) => console.log(err));
   };
 
+  const handleOnSwitchToLogin = () => {
+    setShowRegisterModal(false);
+    setShowLoginModal(true);
+  };
+
   const handleRegistration = ({ name, avatar, email, password }) => {
     signup({ name, avatar, email, password })
       .then((res) => {
@@ -252,6 +257,7 @@ function App() {
               onClose={closeActiveModal}
               onSignUp={handleRegistration}
               handleRegistration={handleRegistration}
+              onSwitchToLogin={handleOnSwitchToLogin}
             />
           )}
         </div>

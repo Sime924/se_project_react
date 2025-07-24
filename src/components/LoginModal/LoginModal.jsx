@@ -33,7 +33,7 @@ function LoginModal({ isOpen, onClose, handleSignIn }) {
         <input
           type="email"
           className="modal__input"
-          id="login_email"
+          id="login_modal-email"
           placeholder="email"
           required
           minLength="1"
@@ -48,7 +48,7 @@ function LoginModal({ isOpen, onClose, handleSignIn }) {
         <input
           type="password"
           className="modal__input"
-          id="password"
+          id="login_modal-password"
           placeholder="password"
           required
           onChange={handlePasswordChange}

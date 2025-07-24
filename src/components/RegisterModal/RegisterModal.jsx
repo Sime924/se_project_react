@@ -3,7 +3,12 @@ import { signin, signup } from "../../utils/auth";
 import "./RegisterModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function RegisterModal({ isOpen, onClose, handleRegistration }) {
+function RegisterModal({
+  isOpen,
+  onClose,
+  handleRegistration,
+  onSwitchToLogin,
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -42,7 +47,7 @@ function RegisterModal({ isOpen, onClose, handleRegistration }) {
         <input
           type="email"
           className="modal__input"
-          id="email"
+          id="register_email"
           placeholder="email"
           required
           minLength="1"
@@ -89,6 +94,13 @@ function RegisterModal({ isOpen, onClose, handleRegistration }) {
           value={avatar}
         />
       </label>
+      <button
+        type="button"
+        className="register_modal_switch-btn"
+        onClick={onSwitchToLogin}
+      >
+        Or log in
+      </button>
     </ModalWithForm>
   );
 }
