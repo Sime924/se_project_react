@@ -49,12 +49,12 @@ function App() {
 
   const handleOpenRegisterModal = () => {
     setShowRegisterModal(true);
-    console.log("register modal clicked");
   };
 
   const handleOpenLoginModal = () => {
     setShowLoginModal(true);
   };
+
   const handleCardLike = ({ id, isLiked }) => {
     const token = localStorage.getItem("jwt");
     !isLiked
@@ -81,10 +81,10 @@ function App() {
     setShowLoginModal(true);
   };
 
-  // const handleOnSwitchToRegister = () => {
-  //   setShowLoginModal(false);
-  //   setShowRegisterModal(true);
-  // };
+  const handleOnSwitchToRegister = () => {
+    setShowLoginModal(false);
+    setShowRegisterModal(true);
+  };
 
   const handleRegistration = ({ name, avatar, email, password }) => {
     signup({ name, avatar, email, password })
@@ -254,6 +254,7 @@ function App() {
               onClose={closeActiveModal}
               onSignIn={handleSignIn}
               handleSignIn={handleSignIn}
+              onSwitchToRegister={handleOnSwitchToRegister}
             />
           )}
           {showRegisterModal && (

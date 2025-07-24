@@ -3,7 +3,7 @@ import { signin, signup } from "../../utils/auth";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./LoginModal.css";
 
-function LoginModal({ isOpen, onClose, handleSignIn }) {
+function LoginModal({ isOpen, onClose, handleSignIn, onSwitchToRegister }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -55,6 +55,13 @@ function LoginModal({ isOpen, onClose, handleSignIn }) {
           value={password}
         />
       </label>
+      <button
+        type="button"
+        className="login__modal_switch-btn"
+        onClick={onSwitchToRegister}
+      >
+        or Sign Up
+      </button>
     </ModalWithForm>
   );
 }

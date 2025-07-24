@@ -1,0 +1,17 @@
+.register_modal_switch-btn {
+  border: none;
+  background-color: transparent;
+  width: 124px;
+  height: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  font-family: "Cabinet Grotesk Regular", "Times New Roman", Times, sans-serif;
+  color: #000000;
+  opacity: 0.5;
+  transition-duration: 0.4s;
+}
+.register_modal_switch-btn:hover {
+  cursor: pointer;
+  opacity: 1;
+}
