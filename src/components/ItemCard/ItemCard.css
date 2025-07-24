@@ -1,5 +1,6 @@
 .card {
   width: 323px;
+  height: 328px;
   position: relative;
   display: flex;
   border: 1px solid;
@@ -50,11 +51,11 @@
   cursor: pointer;
 }
 
-.card__like-btn_liked {
+.card__like-btn_active {
   background-image: url("../../assets/LikeButtonLiked.png");
   opacity: 1;
 }
 
-.card__like-btn_liked:hover {
+.card__like-btn_active:hover {
   background-repeat: no-repeat;
 }

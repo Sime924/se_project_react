@@ -178,7 +178,10 @@ function App() {
     const token = localStorage.getItem("token");
 
     if (token) {
-      checkTokenValidity(token);
+      checkTokenValidity(token).then((userData) => {
+        setCurrentUser(userData);
+        setIsLoggedIn(true);
+      });
     }
   }, []);
 

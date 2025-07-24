@@ -6,7 +6,16 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 function ItemModal({ activeModal, onClose, card, handleDeleteCard }) {
   const currentUser = useContext(CurrentUserContext);
 
-  const isOwn = card.owner === currentUser._id;
+  const isOwn = currentUser && card.owner === currentUser.currentUser._id;
+  console.log("card.owner type:", typeof card.owner, "value:", card.owner);
+  console.log(
+    "currentUser._id type:",
+    typeof currentUser._id,
+    "value:",
+    currentUser._id
+  );
+  console.log("Are they equal?", card.owner === currentUser._id);
+  console.log("Full currentUser object:", currentUser);
   const itemDeleteButtonClassName = `modal__delete-item_btn ${
     isOwn ? "" : "modal__delete-item_btn_hidden"
   }`;
@@ -25,13 +34,15 @@ function ItemModal({ activeModal, onClose, card, handleDeleteCard }) {
             <h2 className="modal__caption">{card?.name}</h2>
             <p className="modal__weather">Weather: {card?.weather}</p>
           </div>
-          <button
-            className="modal-close modal__delete-item_btn"
-            type="button"
-            onClick={handleDeleteCard}
-          >
-            Delete Item
-          </button>
+          {isOwn && (
+            <button
+              className="modal-close modal__delete-item_btn"
+              type="button"
+              onClick={handleDeleteCard}
+            >
+              Delete Item
+            </button>
+          )}
         </div>
       </div>
     </div>
