@@ -81,6 +81,11 @@ function App() {
     setShowLoginModal(true);
   };
 
+  // const handleOnSwitchToRegister = () => {
+  //   setShowLoginModal(false);
+  //   setShowRegisterModal(true);
+  // };
+
   const handleRegistration = ({ name, avatar, email, password }) => {
     signup({ name, avatar, email, password })
       .then((res) => {
