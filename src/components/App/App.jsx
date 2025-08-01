@@ -21,6 +21,7 @@ import { signin } from "../../utils/auth";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import ChangeProfileDataModal from "../ChangeProfileDataModal/ChangeProfileDataModal";
 
 const BAD_REQUEST_STATUS_CODE = 400;
 
@@ -41,10 +42,12 @@ function App() {
   const [showRegisterModal, setShowRegisterModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
-  const [showConfirmDeleteModal, setShowConfirmDeleteModal] = useState(false);
+  const [showChangeProfileDataModal, setShowChangeProfileDataModal] =
+    useState(false);
 
-  const handleOpenDeleteModal = () => {
-    setShowConfirmDeleteModal(true);
+  // finish handlers for the change profile data modal and pass props
+  const handleOpenchangeProfileDataModal = () => {
+    setShowChangeProfileDataModal(true);
   };
 
   const handleOpenRegisterModal = () => {
@@ -265,7 +268,8 @@ function App() {
               handleRegistration={handleRegistration}
               onSwitchToLogin={handleOnSwitchToLogin}
             />
-          )}
+          )}{" "}
+          ;
         </div>
       </CurrentTemperatureUnitContext.Provider>
     </CurrentUserContext.Provider>
