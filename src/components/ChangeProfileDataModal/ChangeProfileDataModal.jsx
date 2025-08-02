@@ -24,7 +24,7 @@ function ChangeProfileDataModal({ isOpen, onClose, onChangeProfileData }) {
       title="Change Profile Data"
       buttonText={"Save Changes"}
       isOpen={isOpen}
-      isClose={onClose}
+      onClose={onClose}
       onSubmit={handleChangeProfileModalDataSubmit}
     >
       <label className="modal__label">
