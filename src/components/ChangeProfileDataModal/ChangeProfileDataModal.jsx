@@ -2,7 +2,7 @@ import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./ChangeProfileDataModal.css";
 
-function ChangeProfileDataModal({ isOpen, onClose, onSubmit }) {
+function ChangeProfileDataModal({ isOpen, onClose, onChangeProfileData }) {
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
 
@@ -16,7 +16,7 @@ function ChangeProfileDataModal({ isOpen, onClose, onSubmit }) {
 
   const handleChangeProfileModalDataSubmit = (e) => {
     e.preventDefault();
-    //add the handler to change the profile data
+    onChangeProfileData({ name, avatar });
   };
 
   return (
@@ -24,11 +24,11 @@ function ChangeProfileDataModal({ isOpen, onClose, onSubmit }) {
       title="Change Profile Data"
       buttonText={"Save Changes"}
       isOpen={isOpen}
-      isClose={isClose}
+      isClose={onClose}
       onSubmit={handleChangeProfileModalDataSubmit}
     >
       <label className="modal__label">
-        ProfileNameChange{""}
+        Name{""}
         <input
           id="profile__name-change"
           type="text"
@@ -39,7 +39,7 @@ function ChangeProfileDataModal({ isOpen, onClose, onSubmit }) {
         />
       </label>
       <label className="modal__label">
-        ProfileAvatarChange{""}
+        Avatar{""}
         <input
           id="profile__avatar-change"
           type="url"

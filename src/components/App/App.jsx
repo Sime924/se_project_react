@@ -16,7 +16,11 @@ import { getItems } from "../../utils/api";
 import { addItem } from "../../utils/api";
 import { deleteCard } from "../../utils/api";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
-import { checkTokenValidity, signup } from "../../utils/auth";
+import {
+  changeProfileData,
+  checkTokenValidity,
+  signup,
+} from "../../utils/auth";
 import { signin } from "../../utils/auth";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import LoginModal from "../LoginModal/LoginModal";
@@ -46,7 +50,7 @@ function App() {
     useState(false);
 
   // finish handlers for the change profile data modal and pass props
-  const handleOpenchangeProfileDataModal = () => {
+  const handleOpenChangeProfileDataModal = () => {
     setShowChangeProfileDataModal(true);
   };
 
@@ -87,6 +91,18 @@ function App() {
   const handleOnSwitchToRegister = () => {
     setShowLoginModal(false);
     setShowRegisterModal(true);
+  };
+
+  const handleChangeProfileData = ({ name, avatar }) => {
+    const token = localStorage.getItem("jwt");
+
+    changeProfileData({ name, avatar }, token)
+      .then((res) => {
+        closeActiveModal();
+        setCurrentUser(res);
+        setIsLoggedIn(true);
+      })
+      .catch((err) => console.log(err));
   };
 
   const handleRegistration = ({ name, avatar, email, password }) => {
@@ -233,6 +249,9 @@ function App() {
                       clothingItems={clothingItems}
                       handleSignOut={handleSignOut}
                       handleCardLike={handleCardLike}
+                      handleOpenChangeProfileDataModal={
+                        handleOpenChangeProfileDataModal
+                      }
                     />
                   </ProtectedRoute>
                 }
@@ -268,8 +287,14 @@ function App() {
               handleRegistration={handleRegistration}
               onSwitchToLogin={handleOnSwitchToLogin}
             />
-          )}{" "}
-          ;
+          )}
+          {showChangeProfileDataModal && (
+            <ChangeProfileDataModal
+              isOpen={showChangeProfileDataModal}
+              onClose={closeActiveModal}
+              onChangeProfileData={handleChangeProfileData}
+            />
+          )}
         </div>
       </CurrentTemperatureUnitContext.Provider>
     </CurrentUserContext.Provider>

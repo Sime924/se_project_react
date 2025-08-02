@@ -50,3 +50,8 @@
   transition-duration: 0.4s;
   margin-bottom: 8px;
 }
+
+.sidebar__profile_data-btn:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

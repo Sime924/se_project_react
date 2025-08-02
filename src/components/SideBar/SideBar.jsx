@@ -3,7 +3,7 @@ import avatar from "../../assets/avatar.svg";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
 
-function SideBar({ handleSignOut }) {
+function SideBar({ handleSignOut, handleOpenChangeProfileDataModal }) {
   const { currentUser } = useContext(CurrentUserContext);
 
   return (
@@ -16,7 +16,12 @@ function SideBar({ handleSignOut }) {
         />
         <p className="sidebar__username">{currentUser?.name}</p>
       </div>
-      <button className="sidebar__profile_data-btn">Change profile data</button>
+      <button
+        className="sidebar__profile_data-btn"
+        onClick={handleOpenChangeProfileDataModal}
+      >
+        Change profile data
+      </button>
       <button className="sidebar_logout-btn" onClick={handleSignOut}>
         Log out
       </button>

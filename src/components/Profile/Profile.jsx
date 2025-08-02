@@ -8,10 +8,14 @@ function Profile({
   handleAddClick,
   handleSignOut,
   handleCardLike,
+  handleOpenChangeProfileDataModal,
 }) {
   return (
     <div className="profile">
-      <SideBar handleSignOut={handleSignOut} />
+      <SideBar
+        handleSignOut={handleSignOut}
+        handleOpenChangeProfileDataModal={handleOpenChangeProfileDataModal}
+      />
       <section className="profile__clothing-items">
         <ClothesSection
           handleAddClick={handleAddClick}
