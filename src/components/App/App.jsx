@@ -153,6 +153,7 @@ function App() {
     setActiveModal("");
     setShowLoginModal(false);
     setShowRegisterModal(false);
+    setShowChangeProfileDataModal(false);
   };
 
   const handleDeleteCard = () => {
