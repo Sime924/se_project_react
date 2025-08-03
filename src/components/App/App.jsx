@@ -63,7 +63,7 @@ function App() {
   };
 
   const handleCardLike = ({ id, isLiked }) => {
-    const token = localStorage.getItem("jwt");
+    const token = localStorage.getItem("token");
     !isLiked
       ? api
           .addCardLike(id, token)
@@ -94,7 +94,7 @@ function App() {
   };
 
   const handleChangeProfileData = ({ name, avatar }) => {
-    const token = localStorage.getItem("jwt");
+    const token = localStorage.getItem("token");
 
     changeProfileData({ name, avatar }, token)
       .then((res) => {
