@@ -49,7 +49,6 @@ function App() {
   const [showChangeProfileDataModal, setShowChangeProfileDataModal] =
     useState(false);
 
-  // finish handlers for the change profile data modal and pass props
   const handleOpenChangeProfileDataModal = () => {
     setShowChangeProfileDataModal(true);
   };
