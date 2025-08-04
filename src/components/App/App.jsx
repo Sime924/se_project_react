@@ -26,6 +26,7 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import ChangeProfileDataModal from "../ChangeProfileDataModal/ChangeProfileDataModal";
+import DeleteModal from "../DeleteModal/DeleteModal";
 
 const BAD_REQUEST_STATUS_CODE = 400;
 
@@ -48,6 +49,11 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [showChangeProfileDataModal, setShowChangeProfileDataModal] =
     useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+
+  const handleOpenDeleteModal = () => {
+    setShowDeleteModal(true);
+  };
 
   const handleOpenChangeProfileDataModal = () => {
     setShowChangeProfileDataModal(true);
@@ -80,6 +86,11 @@ function App() {
             );
           })
           .catch((err) => console.log(err));
+  };
+
+  const handleOnConfirm = () => {
+    handleDeleteCard();
+    closeActiveModal();
   };
 
   const handleOnSwitchToLogin = () => {
@@ -153,6 +164,7 @@ function App() {
     setShowLoginModal(false);
     setShowRegisterModal(false);
     setShowChangeProfileDataModal(false);
+    setShowDeleteModal(false);
   };
 
   const handleDeleteCard = () => {
@@ -269,6 +281,7 @@ function App() {
             card={selectedCard}
             onClose={closeActiveModal}
             handleDeleteCard={handleDeleteCard}
+            handleOpenDeleteModal={handleOpenDeleteModal}
           />
           {showLoginModal && (
             <LoginModal
@@ -293,6 +306,13 @@ function App() {
               isOpen={showChangeProfileDataModal}
               onClose={closeActiveModal}
               onChangeProfileData={handleChangeProfileData}
+            />
+          )}
+          {showDeleteModal && (
+            <DeleteModal
+              isOpen={showDeleteModal}
+              onClose={closeActiveModal}
+              onConfirm={handleOnConfirm}
             />
           )}
         </div>

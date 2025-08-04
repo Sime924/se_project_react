@@ -3,7 +3,7 @@ import { defaultClothingItems } from "../../utils/constants";
 import "./ItemModal.css";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function ItemModal({ activeModal, onClose, card, handleDeleteCard }) {
+function ItemModal({ activeModal, onClose, card, handleOpenDeleteModal }) {
   const { currentUser } = useContext(CurrentUserContext);
   const isOwn = currentUser && card.owner === currentUser._id;
 
@@ -29,7 +29,7 @@ function ItemModal({ activeModal, onClose, card, handleDeleteCard }) {
             <button
               className="modal-close modal__delete-item_btn"
               type="button"
-              onClick={handleDeleteCard}
+              onClick={handleOpenDeleteModal}
             >
               Delete Item
             </button>
