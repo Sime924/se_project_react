@@ -6,9 +6,9 @@ function DeleteModal({ isOpen, onClose, handleOnConfirm }) {
     <div className={`modal ${isOpen && "modal_opened"}`}>
       <div className="modal__content modal__content_type-confirmation">
         <h2 className="delete__modal_title">
-          Are you sure you want to delete this item?
+          Are you sure you want to delete this item?{" "}
         </h2>
-        <h2 className="delete__modal_text">This action is irreversible</h2>
+        <h2 className="delete__modal_text">This action is irreversable</h2>
         <button className="modal__close" type="button" onClick={onClose}>
           {" "}
         </button>
@@ -19,7 +19,7 @@ function DeleteModal({ isOpen, onClose, handleOnConfirm }) {
         >
           Yes, delete item
         </button>
-        <button className="delete__modal_cancel" onClick={onClose}>
+        <button className="delete__modal_cancel-btn" onClick={onClose}>
           Cancel
         </button>
       </div>

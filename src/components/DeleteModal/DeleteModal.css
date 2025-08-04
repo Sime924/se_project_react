@@ -1,0 +1,58 @@
+.modal__content_type-confirmation {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.delete__modal_title {
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  font-family: "Cabinet Grotesk Regular", "Times New Roman", Times, sans-serif;
+}
+
+.delete__modal_text {
+  font-family: "Cabinet Grotesk Regular", "Times New Roman", Times, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0 auto;
+}
+
+.delete__modal_btn {
+  margin: 40px 140px 24px;
+  width: 160px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Cabinet Grotesk Bold", "Times New Roman", Times, sans-serif;
+  border: none;
+  background: transparent;
+  color: #ff4d00;
+  opacity: 0.6;
+  transition-duration: 0.4s;
+}
+
+.delete__modal_btn:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.delete__modal_cancel-btn {
+  margin: 0 auto;
+  width: 90px;
+  height: 24px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Cabinet Grotesk Bold", "Times New Roman", Times, sans-serif;
+  border: none;
+  background-color: transparent;
+  opacity: 0.6;
+  transition-duration: 0.4s;
+}
+
+.delete__modal_cancel-btn:hover {
+  cursor: pointer;
+  opacity: 1;
+}
