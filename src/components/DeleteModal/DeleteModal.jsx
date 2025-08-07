@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./DeleteModal.css";
 
-function DeleteModal({ isOpen, onClose, handleOnConfirm, handleDeleteCard }) {
+function DeleteModal({ isOpen, onClose, handleDeleteCard }) {
   return (
     <div className={`modal ${isOpen && "modal_opened"}`}>
       <div className="modal__content modal__content_type-confirmation">

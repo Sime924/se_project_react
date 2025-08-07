@@ -88,11 +88,6 @@ function App() {
           .catch((err) => console.log(err));
   };
 
-  const handleOnConfirm = () => {
-    handleDeleteCard();
-    closeActiveModal();
-  };
-
   const handleOnSwitchToLogin = () => {
     setShowRegisterModal(false);
     setShowLoginModal(true);
@@ -311,7 +306,6 @@ function App() {
             <DeleteModal
               isOpen={showDeleteModal}
               onClose={closeActiveModal}
-              onConfirm={handleOnConfirm}
               handleDeleteCard={handleDeleteCard}
             />
           )}
