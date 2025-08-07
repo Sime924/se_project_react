@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./DeleteModal.css";
 
-function DeleteModal({ isOpen, onClose, handleOnConfirm }) {
+function DeleteModal({ isOpen, onClose, handleOnConfirm, handleDeleteCard }) {
   return (
     <div className={`modal ${isOpen && "modal_opened"}`}>
       <div className="modal__content modal__content_type-confirmation">
@@ -15,7 +15,7 @@ function DeleteModal({ isOpen, onClose, handleOnConfirm }) {
         <button
           className="delete__modal_btn"
           type="button"
-          onClick={handleOnConfirm}
+          onClick={handleDeleteCard}
         >
           Yes, delete item
         </button>

@@ -280,7 +280,6 @@ function App() {
             activeModal={activeModal}
             card={selectedCard}
             onClose={closeActiveModal}
-            handleDeleteCard={handleDeleteCard}
             handleOpenDeleteModal={handleOpenDeleteModal}
           />
           {showLoginModal && (
@@ -313,6 +312,7 @@ function App() {
               isOpen={showDeleteModal}
               onClose={closeActiveModal}
               onConfirm={handleOnConfirm}
+              handleDeleteCard={handleDeleteCard}
             />
           )}
         </div>
