@@ -15,3 +15,7 @@
   cursor: pointer;
   opacity: 1;
 }
+
+.modal__label-register {
+  font-family: "Cabinet Grotesk Regular", "Times New Roman", Times, sans-serif;
+}
