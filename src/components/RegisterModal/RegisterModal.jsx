@@ -41,6 +41,15 @@ function RegisterModal({
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleRegistrationSubmit}
+      switchButton={
+        <button
+          type="button"
+          className="register_modal_switch-btn"
+          onClick={onSwitchToLogin}
+        >
+          Or log in
+        </button>
+      }
     >
       <label htmlFor="email" className="modal__label-register">
         Email{" "}
@@ -94,13 +103,6 @@ function RegisterModal({
           value={avatar}
         />
       </label>
-      <button
-        type="button"
-        className="register_modal_switch-btn"
-        onClick={onSwitchToLogin}
-      >
-        Or log in
-      </button>
     </ModalWithForm>
   );
 }

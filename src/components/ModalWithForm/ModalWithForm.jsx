@@ -8,6 +8,7 @@ function ModalWithForm({
   onClose,
   onSubmit,
   handleOpenloginModal,
+  switchButton,
 }) {
   return (
     <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
@@ -18,11 +19,12 @@ function ModalWithForm({
         </button>
         <form onSubmit={onSubmit} className="modal__form">
           {children}
-          {
+          <div className="modal__buttons">
             <button type="submit" className="modal__submit">
               {buttonText}
             </button>
-          }
+            {switchButton}
+          </div>
         </form>
       </div>
     </div>

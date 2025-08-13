@@ -1,7 +1,7 @@
 .login__modal_switch-btn {
   border: none;
   background-color: transparent;
-  width: 124px;
+  padding: 10px 10px 0px;
   height: 20px;
   font-size: 16px;
   font-weight: 700;
@@ -10,6 +10,7 @@
   color: #000000;
   opacity: 0.5;
   transition-duration: 0.4s;
+  align-self: center;
 }
 
 .login__modal_switch-btn:hover {

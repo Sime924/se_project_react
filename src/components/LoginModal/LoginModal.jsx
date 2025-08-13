@@ -27,6 +27,15 @@ function LoginModal({ isOpen, onClose, handleSignIn, onSwitchToRegister }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleLoginModalSubmit}
+      switchButton={
+        <button
+          type="button"
+          className="login__modal_switch-btn"
+          onClick={onSwitchToRegister}
+        >
+          or Sign Up
+        </button>
+      }
     >
       <label className="modal__label-login">
         Email{" "}
@@ -42,7 +51,6 @@ function LoginModal({ isOpen, onClose, handleSignIn, onSwitchToRegister }) {
           value={email}
         />
       </label>
-
       <label className="modal__label-login">
         Password{" "}
         <input
@@ -55,13 +63,13 @@ function LoginModal({ isOpen, onClose, handleSignIn, onSwitchToRegister }) {
           value={password}
         />
       </label>
-      <button
+      {/* <button
         type="button"
         className="login__modal_switch-btn"
         onClick={onSwitchToRegister}
       >
         or Sign Up
-      </button>
+      </button> */}
     </ModalWithForm>
   );
 }
