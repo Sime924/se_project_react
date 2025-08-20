@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-export default function AddItemModal({
+export default function EditProfileModal({
   onClose,
   isOpen,
   onAddItemModalSubmit,
@@ -39,7 +39,7 @@ export default function AddItemModal({
           type="text"
           className="modal__input"
           id="name"
-          placeholder="Name"
+          placeholder="Enter your name"
           required
           minLength="1"
           maxLength="30"
@@ -54,7 +54,7 @@ export default function AddItemModal({
           type="Url"
           className="modal__input"
           id="imageUrl"
-          placeholder="Enter avatar URL"
+          placeholder="Enter a valid URL"
           required
           onChange={handleAvatarChange}
           value={avatar}

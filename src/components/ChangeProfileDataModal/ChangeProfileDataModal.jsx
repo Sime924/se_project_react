@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./ChangeProfileDataModal.css";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function ChangeProfileDataModal({ isOpen, onClose, onChangeProfileData }) {
-  const [name, setName] = useState("");
-  const [avatar, setAvatar] = useState("");
+  const { currentUser } = useContext(CurrentUserContext);
+
+  const [name, setName] = useState(currentUser?.name || "");
+  const [avatar, setAvatar] = useState(currentUser?.avatar || "");
+
+  useEffect(() => {
+    setName(currentUser?.name || "");
+    setAvatar(currentUser?.avatar || "");
+  }, [currentUser]);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -44,7 +52,7 @@ function ChangeProfileDataModal({ isOpen, onClose, onChangeProfileData }) {
           id="profile__avatar-change"
           type="url"
           className="modal__input"
-          placeholder="Enter a valid url"
+          placeholder="Enter a valid Url"
           onChange={handleAvatarChange}
           value={avatar}
         />
