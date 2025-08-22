@@ -5,11 +5,14 @@ function getItems() {
 }
 
 export function checkResponse(res) {
-  return res.ok ? res.json() : Promise.reject(`Error: $(res.status)`);
+  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 }
 
 function addItem(itemData) {
   const token = localStorage.getItem("token");
+  console.log("Token from localStorage:", token);
+  console.log("Token length:", token ? token.length : "No token found");
+  console.log("Item data being sent:", itemData);
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {

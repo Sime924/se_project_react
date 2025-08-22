@@ -24,12 +24,17 @@ function signin({ email, password }) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  }).then((response) => {
-    if (!response.ok) {
-      throw new Error("Network response is not ok");
-    }
-    return response.json();
-  });
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response is not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      localStorage.setItem("token", data.token);
+      return data;
+    });
 }
 
 function changeProfileData({ name, avatar }, token) {

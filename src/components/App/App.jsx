@@ -114,8 +114,13 @@ function App() {
     signup({ name, avatar, email, password })
       .then((res) => {
         closeActiveModal();
-        setCurrentUser(res);
-        setIsLoggedIn(true);
+        if (res.token) {
+          localStorage.setItem("token", res.token);
+          checkTokenValidity(res.token).then((userData) => {
+            setCurrentUser(userData);
+            setIsLoggedIn(true);
+          });
+        }
       })
       .catch((err) => console.log(err));
   };
