@@ -33,12 +33,12 @@ export default function EditProfileModal({
       onClose={onClose}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="name" className="modal__label">
+      <label className="modal__label">
         Name{" "}
         <input
           type="text"
           className="modal__input"
-          id="name"
+          id="edit_profile_modal-name"
           placeholder="Enter your name"
           required
           minLength="1"
@@ -48,7 +48,7 @@ export default function EditProfileModal({
         />
       </label>
 
-      <label htmlFor="avatarUrl" className="modal__label">
+      <label className="modal__label">
         Avatar{" "}
         <input
           type="Url"

@@ -1,3 +1,5 @@
+import { checkResponse } from "./api";
+
 const baseUrl = "http://localhost:3001";
 
 function signup(userData) {
@@ -8,12 +10,7 @@ function signup(userData) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(userData),
-  }).then((response) => {
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    return response.json();
-  });
+  }).then(checkResponse);
 }
 
 function signin({ email, password }) {
@@ -25,12 +22,7 @@ function signin({ email, password }) {
     },
     body: JSON.stringify({ email, password }),
   })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response is not ok");
-      }
-      return response.json();
-    })
+    .then(checkResponse)
     .then((data) => {
       localStorage.setItem("token", data.token);
       return data;
@@ -46,12 +38,7 @@ function changeProfileData({ name, avatar }, token) {
       authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ name, avatar }),
-  }).then((response) => {
-    if (!response.ok) {
-      throw new Error("Network response is not ok");
-    }
-    return response.json();
-  });
+  }).then(checkResponse);
 }
 
 const checkTokenValidity = (token) => {
@@ -61,12 +48,7 @@ const checkTokenValidity = (token) => {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
-  }).then((res) => {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(checkResponse);
 };
 
 export { signup, signin, checkTokenValidity, changeProfileData };
