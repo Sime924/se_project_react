@@ -51,7 +51,7 @@ function RegisterModal({
         </button>
       }
     >
-      <label htmlFor="email" className="modal__label-register">
+      <label htmlFor="register_email" className="modal__label-register">
         Email{" "}
         <input
           type="email"
@@ -79,7 +79,7 @@ function RegisterModal({
         />
       </label>
 
-      <label htmlFor="name" className="modal__label-regiter">
+      <label className="modal__label-regiter">
         Name{" "}
         <input
           id="name"
@@ -91,7 +91,7 @@ function RegisterModal({
           value={name}
         />
       </label>
-      <label htmlFor="avatarUrl" className="modal__label-register">
+      <label className="modal__label-register">
         Avatar URL{" "}
         <input
           id="avatarUrl"
