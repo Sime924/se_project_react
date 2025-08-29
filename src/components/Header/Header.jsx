@@ -31,19 +31,20 @@ function Header({
         <ToggleSwitch />
         {isLoggedIn ? (
           <div className="header__user-container">
-            <Link to="/profile" className="header__link"></Link>
             <button
               className="header__add-clothes-btn"
               onClick={handleAddClick}
             >
               + Add clothes
             </button>
-            <p className="header__username">{currentUser?.name}</p>
-            <img
-              src={currentUser?.avatar}
-              alt={currentUser?.name}
-              className="header__avatar"
-            />
+            <Link to="/profile" className="header__link">
+              <p className="header__username">{currentUser?.name}</p>
+              <img
+                src={currentUser?.avatar}
+                alt={currentUser?.name}
+                className="header__avatar"
+              />
+            </Link>
           </div>
         ) : (
           <div className="header__auth-container">
