@@ -3,11 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://whatstheweather.jumpingcrab.com",
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && scp -r ./dist/* sgebord39@whatstheweather.jumpingcrab.com:/home/sgebord39/frontend"
   },
   "dependencies": {
     "react": "^18.3.1",
